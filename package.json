@@ -1,0 +1,38 @@
+{
+  "name": "react-inky",
+  "version": "1.0.0",
+  "description": "React components for Inky",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register \"src/**/__tests__/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gakimball/react-inky.git"
+  },
+  "keywords": [
+    "react",
+    "inky",
+    "email"
+  ],
+  "author": "Geoff Kimball <geoff@geoffkimball.com> (http://geoffkimball.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gakimball/react-inky/issues"
+  },
+  "homepage": "https://github.com/gakimball/react-inky#readme",
+  "dependencies": {
+    "react": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-latest": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.1",
+    "enzyme": "^2.4.1",
+    "mocha": "^3.0.2",
+    "react-dom": "^15.3.2",
+    "react-server": "^0.4.7"
+  }
+}
