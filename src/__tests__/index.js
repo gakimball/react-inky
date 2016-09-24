@@ -20,5 +20,5 @@ describe('inky()', () => {
 
   it('contains input HTML', () => {
     expect(output).to.contain(input);
-  })
+  });
 });
