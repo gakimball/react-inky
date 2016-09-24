@@ -8,10 +8,10 @@ import getColumnClasses from '../util/getColumnClasses';
  *
  * @example
  * <Row>
- *   <Column small="12" large="4" first={true}>
+ *   <Column small="12" large="4">
  *     Left column
  *   </Column>
- *   <Column small="12" large="8" last={true}>
+ *   <Column small="12" large="8">
  *     Right column
  *   </Column>
  * </Row>
