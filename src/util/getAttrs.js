@@ -26,7 +26,7 @@ export default function getAttrs(props, tag, className = '') {
   const output = filterPropsFor(props, tag);
 
   // Append class names in props to base classes
-  output.className = classnames(className, props.className);
+  output.class = classnames(className, props.className);
 
   // Style isn't included in `filterPropsFor` and must be copied manually
   if (props.style) output.style = props.style

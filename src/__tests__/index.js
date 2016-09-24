@@ -1,8 +1,10 @@
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
+import chaiHtml from 'chai-html';
 import inky from '../';
 
 chai.use(chaiEnzyme);
+chai.use(chaiHtml);
 
 describe('inky()', () => {
   const input = '<div></div>';
