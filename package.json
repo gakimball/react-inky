@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/gakimball/react-inky#readme",
   "dependencies": {
-    "react": "^15.3.2"
+    "classnames": "^2.2.5",
+    "react": "^15.3.2",
+    "react-attrs-filter": "^0.1.2"
   },
   "devDependencies": {
     "babel-preset-latest": "^6.14.0",
