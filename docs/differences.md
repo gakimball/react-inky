@@ -18,18 +18,6 @@ You'll see the attribute `is="true"` on the root elements of many components. Ad
 
 The presence of `is="true"` won't affect how email clients render the HTML, but it does make the HTML output slightly different from Inky.
 
-## Nested Rows
-
-Similarly to [first and last columns](#first-and-last-columns) above, columns that contain a nested row must be manually marked.
-
-```js
-<Row>
-  <Column first={true} last={true} hasRow={true}>
-    <Row></Row>
-  </Column>
-</Row>
-```
-
 ## Responsive Spacers
 
 In Inky, the attribute `sizeSm` or `sizeLg` can be set on a `<spacer>` to set the size *and* make it responsive. If both attributes are set, the element prints out two spacers adjacent to each other.

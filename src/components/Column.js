@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import containsRow from '../util/containsRow';
 import getAttrs from '../util/getAttrs';
 import getColumnClasses from '../util/getColumnClasses';
 
@@ -18,13 +19,14 @@ import getColumnClasses from '../util/getColumnClasses';
  */
 export default function Column(props, { columnCount }) {
   const classes = getColumnClasses(props, columnCount);
+  const hasRow = containsRow(props.children);
 
   return (
     <th is {...getAttrs(props, 'th', classes)}>
       <table>
         <tr>
           <th>{props.children}</th>
-          {!props.hasRow && props.expander ? <th className="expander"></th> : null}
+          {!hasRow && props.expander ? <th className="expander"></th> : null}
         </tr>
       </table>
     </th>
@@ -34,10 +36,11 @@ export default function Column(props, { columnCount }) {
 /**
  * Props for `<Column />`.
  * @type Object
+ * @type {String} small - Width on small screens.
+ * @type {String} large - Width on large screens.
  * @prop {Boolean} [expander=true] Include expander `<th />` in column.
  * @prop {Boolean} [first=false] Column is the first child.
  * @prop {Boolean} [last=false] Column is the last child.
- * @prop {Boolean} [hasRow=false] Column has a nested row inside of it.
  */
 Column.propTypes = {
   small: PropTypes.string,
@@ -45,7 +48,6 @@ Column.propTypes = {
   expander: PropTypes.bool,
   first: PropTypes.bool,
   last: PropTypes.bool,
-  hasRow: PropTypes.bool,
 }
 
 /**
@@ -56,7 +58,6 @@ Column.defaultProps = {
   expander: true,
   first: false,
   last: false,
-  hasRow: false,
 }
 
 /**

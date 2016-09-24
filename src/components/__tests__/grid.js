@@ -8,7 +8,7 @@ describe('Grid', () => {
   it('can render nested grids', () => {
     const wrapper = render(
       <Row>
-        <Column first={true} last={true} hasRow={true}>
+        <Column first={true} last={true}>
           <Row></Row>
         </Column>
       </Row>
