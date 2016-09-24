@@ -6,7 +6,7 @@ const classnames = require('classnames');
  * @returns {String} Column classes.
  */
 export default function getColumnClasses(props) {
-  const smallSize = props.small || 12;
+  const smallSize = props.small;
   const largeSize = props.large || smallSize;
 
   return classnames('columns', `small-${smallSize}`, `large-${largeSize}`, {

@@ -40,6 +40,8 @@ export default function Column(props) {
  * @prop {Boolean} [hasRow=false] Column has a nested row inside of it.
  */
 Column.propTypes = {
+  small: PropTypes.string,
+  large: PropTypes.large,
   expander: PropTypes.bool,
   first: PropTypes.bool,
   last: PropTypes.bool,
@@ -51,6 +53,7 @@ Column.propTypes = {
  * @type Object
  */
 Column.defaultProps = {
+  small: 12,
   expander: true,
   first: false,
   last: false,
