@@ -1,5 +1,10 @@
 const classnames = require('classnames');
 
+/**
+ * Generate CSS classes for a `<Column />`, including the base `columns`, sizing classes, and `first`/`last` classes.
+ * @param {Object} props - Component props.
+ * @returns {String} Column classes.
+ */
 export default function getColumnClasses(props) {
   const smallSize = props.small || 12;
   const largeSize = props.large || smallSize;
