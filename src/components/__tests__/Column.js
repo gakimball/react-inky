@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { render } from 'enzyme';
 import Column from '../Column';
+import Container from '../Container';
 
 describe('<Column />', () => {
   it('creates a basic column', () => {
@@ -66,6 +67,20 @@ describe('<Column />', () => {
         <table>
           <tr>
             <th>Column</th>
+            <th class="expander"></th>
+          </tr>
+        </table>
+      </th>
+    `);
+  });
+
+  it('can use context of <Container />', () => {
+    const wrapper = render(<Container columnCount={16}><Column></Column></Container>);
+    expect(wrapper.find('.columns').parent().html()).html.to.equal(`
+      <th is="true" class="small-16 large-16 columns">
+        <table>
+          <tr>
+            <th></th>
             <th class="expander"></th>
           </tr>
         </table>

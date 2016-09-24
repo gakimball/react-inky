@@ -2,6 +2,16 @@
 
 react-inky references the test suite for the Node version of Inky directly, and the custom tags and attributes are all the same. However, due to some limitations in React's handling of HTML, react-inky handles a few components slightly different.
 
+## Configuration
+
+Inky's main configuration option is `columnCount`, which can be used to change the global column count from the default of 12. Instead of passing that setting to a function, it's set on the top-level `<Container />` component. In the below example, all columns inside of the container will default to 16 columns wide.
+
+```js
+<Container columnCount={16}>
+  {/* ... */}
+</Container>
+```
+
 ## is="true"
 
 You'll see the attribute `is="true"` on the root elements of many components. Adding the `is` attribute to an element bypasses React's checks for what attributes are valid on an element. Many Foundation for Emails components use `align`, and other deprecated HTML attributes. Normally, React will throw a warning and strip these attributes when you try to add them. Adding `is` to an element tells React to skip attribute checking.

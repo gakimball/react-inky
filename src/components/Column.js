@@ -16,8 +16,8 @@ import getColumnClasses from '../util/getColumnClasses';
  *   </Column>
  * </Row>
  */
-export default function Column(props) {
-  const classes = getColumnClasses(props);
+export default function Column(props, { columnCount }) {
+  const classes = getColumnClasses(props, columnCount);
 
   return (
     <th is {...getAttrs(props, 'th', classes)}>
@@ -41,7 +41,7 @@ export default function Column(props) {
  */
 Column.propTypes = {
   small: PropTypes.string,
-  large: PropTypes.large,
+  large: PropTypes.string,
   expander: PropTypes.bool,
   first: PropTypes.bool,
   last: PropTypes.bool,
@@ -53,9 +53,17 @@ Column.propTypes = {
  * @type Object
  */
 Column.defaultProps = {
-  small: 12,
   expander: true,
   first: false,
   last: false,
   hasRow: false,
+}
+
+/**
+ * Context accessible from parent components.
+ * @type Object
+ * @prop {Number} columnCount - Default column count. Inherited from `<Container />`.
+ */
+Column.contextTypes = {
+  columnCount: PropTypes.number,
 }
