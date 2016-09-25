@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Children, cloneElement } from 'react';
+import classnames from 'classnames';
 import getAttrs from '../util/getAttrs';
 
 export default function Menu(props) {
@@ -7,7 +8,16 @@ export default function Menu(props) {
       <tr>
         <td>
           <table>
-            <tr>{props.children}</tr>
+            {/* Modify `<Item />` components if the menu has a center attribute */}
+            <tr>{Children.map(props.children, child => {
+              if (props.align === 'center' && typeof child.type === 'function' && child.type.name === 'Item') {
+                return cloneElement(child, {
+                  className: classnames(child.props.className, 'float-center'),
+                });
+              }
+
+              return child;
+            })}</tr>
           </table>
         </td>
       </tr>

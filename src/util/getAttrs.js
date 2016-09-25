@@ -28,8 +28,11 @@ export default function getAttrs(props, tag, className = '') {
   // Append class names in props to base classes
   output.class = classnames(className, props.className);
 
-  // Style isn't included in `filterPropsFor` and must be copied manually
+  // `style` isn't included in `filterPropsFor` and must be copied manually
   if (props.style) output.style = props.style
+
+  // Same with `align`, since it's a deprecated attribute
+  if (props.align) output.align = props.align;
 
   return output;
 }

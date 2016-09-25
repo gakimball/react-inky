@@ -9,7 +9,8 @@ describe('getAttrs()', () => {
       large: 6,
       small: 12,
       style: { background: 'white' },
-      className: 'header'
+      className: 'header',
+      align: 'center',
     }
     output = getAttrs(props, 'table', 'row');
   });
@@ -19,10 +20,14 @@ describe('getAttrs()', () => {
   });
 
   it('filters out custom props', () => {
-    expect(output).to.have.all.keys(['style', 'class']);
+    expect(output).to.have.all.keys(['style', 'class', 'align']);
   });
 
   it('adds class names', () => {
     expect(output.class).to.equal('row header');
+  });
+
+  it('adds align manually', () => {
+    expect(output.align).to.equal('center');
   });
 });
