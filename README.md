@@ -12,6 +12,7 @@ npm install react-inky --save
 
 - [Setup](docs/setup.md)
 - [Differences from Inky](docs/differences.md)
+- [Examples](docs/examples.md)
 
 ## License
 
