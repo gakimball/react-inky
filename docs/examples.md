@@ -91,7 +91,7 @@ function WelcomeEmail({ firstName, lastName }) {
 
 ## Order
 
-This example is based on ZURB's template [`order.html`], and is passed order info to dynamically generate an email.
+This example is based on ZURB's template [`order.html`](https://github.com/zurb/foundation-emails/blob/develop/templates/order.html), and is passed order info to dynamically generate an email.
 
 ```jsx
 function OrderTemplate({ order }) {
