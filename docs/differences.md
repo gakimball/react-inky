@@ -6,7 +6,7 @@ react-inky references the test suite for the Node version of Inky directly, and 
 
 Inky's main configuration option is `columnCount`, which can be used to change the global column count from the default of 12. Instead of passing that setting to a function, it's set on the top-level `<Container />` component. In the below example, all columns inside of the container will default to 16 columns wide.
 
-```js
+```jsx
 <Container columnCount={16}>
   {/* ... */}
 </Container>
@@ -18,7 +18,7 @@ In Inky, the attribute `sizeSm` or `sizeLg` can be set on a `<spacer>` to set th
 
 A React component must return *one* root element, so making it return two spacers side-by-side is not possible. With that in mind, to create a spacer with different sizes on different screen widths, place two `<Spacer />` components right next to each other.
 
-```js
+```jsx
 <Spacer sizeSm="10" />
 <Spacer sizeLg="20" />
 ```

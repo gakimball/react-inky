@@ -30,7 +30,7 @@ To convert your React-powered email into a plain HTML email, use ReactDOM's `ren
 
 In the below example, our email template component includes a prop, making its contents dynamic.
 
-```js
+```jsx
 import { Container, Row, Column } from 'react-inky';
 import { renderToString } from 'react-dom/server';
 
@@ -52,7 +52,7 @@ This isn't quite enough, however. The `<Container />` component doesn't include 
 
 Pass your email template to the `inky()` function *before* passing it to `renderToString()`. The `inky()` function will wrap your email in the Foundation for Emails boilerplate.
 
-```js
+```jsx
 import inky, { Container, Row, Column } from 'react-inky';
 import { renderToString } from 'react-dom/server';
 
