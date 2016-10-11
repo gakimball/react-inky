@@ -4,6 +4,8 @@
   "description": "React components for Inky",
   "main": "index.js",
   "scripts": {
+    "docs:build": "gitbook build",
+    "docs:serve": "gitbook serve",
     "test": "mocha --compilers js:babel-register \"src/**/__tests__/*.js\""
   },
   "repository": {
