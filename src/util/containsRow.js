@@ -8,8 +8,8 @@ import { Children } from 'react';
 export default function containsRow(children) {
   let hasRow = false;
 
-  Children.map(children, child => {
-    if (typeof child.type === 'function' && child.type.name === 'Row') {
+  Children.forEach(children, child => {
+    if (child && typeof child.type === 'function' && child.type.name === 'Row') {
       hasRow = true;
     }
   });
