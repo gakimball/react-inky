@@ -1,5 +1,6 @@
 export { default as Button } from './components/Button';
 export { default as Callout } from './components/Callout';
+export { default as Center } from './components/Center';
 export { default as Column } from './components/Column';
 export { default as Container } from './components/Container';
 export { default as Inky } from './components/Inky';
