@@ -8,7 +8,7 @@
     "docs:build": "gitbook build",
     "docs:serve": "gitbook serve",
     "test": "mocha --compilers js:babel-register \"src/**/__tests__/*.js\"",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
