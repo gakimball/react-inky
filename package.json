@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "React components for Inky",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "babel src/ -d lib/",
     "docs:build": "gitbook build",
