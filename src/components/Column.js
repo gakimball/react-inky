@@ -25,10 +25,12 @@ export default function Column(props, { columnCount }) {
   return (
     <th is {...getAttrs(props, 'th', classes)}>
       <table>
-        <tr>
-          <th>{props.children}</th>
-          {!hasRow && props.expander ? <th className="expander"></th> : null}
-        </tr>
+        <tbody>
+          <tr>
+            <th>{props.children}</th>
+            {!hasRow && props.expander ? <th className="expander"></th> : null}
+          </tr>
+        </tbody>
       </table>
     </th>
   )
