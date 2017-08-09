@@ -7,14 +7,16 @@ import Center from '../Center';
 
 describe('<Menu />', () => {
   it('renders a menu', () => {
-    const wrapper = render(<Menu className="custom-class">Menu</Menu>);
+    const wrapper = render(<Menu className="custom-class"><td>Menu</td></Menu>);
 
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="menu custom-class">
         <tr>
           <td>
             <table>
-              <tr>Menu</tr>
+              <tr>
+                <td>Menu</td>
+              </tr>
             </table>
           </td>
         </tr>
