@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import containsRow from '../util/containsRow';
 import getAttrs from '../util/getAttrs';
 import getColumnClasses from '../util/getColumnClasses';
