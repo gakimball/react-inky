@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
 
 export default function Button(props) {
