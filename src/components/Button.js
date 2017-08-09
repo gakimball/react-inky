@@ -7,21 +7,25 @@ export default function Button(props) {
 
   return (
     <table is {...getAttrs(props, 'table', 'button')}>
-      <tr>
-        <td>
-          <table>
-            <tr>
-              <td>
-                {expanded
-                  ? <center><a is href={props.href} target={props.target} align="center" class="float-center">{props.children}</a></center>
-                  : <a href={props.href} target={props.target}>{props.children}</a>
-                }
-              </td>
-            </tr>
-          </table>
-        </td>
-        {expanded ? <td className="expander"></td> : null}
-      </tr>
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    {expanded
+                      ? <center><a is href={props.href} target={props.target} align="center" class="float-center">{props.children}</a></center>
+                      : <a href={props.href} target={props.target}>{props.children}</a>
+                    }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          {expanded ? <td className="expander"></td> : null}
+        </tr>
+      </tbody>
     </table>
   )
 }

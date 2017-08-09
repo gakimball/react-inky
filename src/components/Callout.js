@@ -5,10 +5,12 @@ import getAttrs from '../util/getAttrs';
 export default function Callout(props) {
   return (
     <table is {...getAttrs(props, 'table', 'callout')}>
-      <tr>
-        <th className="callout-inner">{props.children}</th>
-        <th className="expander"></th>
-      </tr>
+      <tbody>
+        <tr>
+          <th className="callout-inner">{props.children}</th>
+          <th className="expander"></th>
+        </tr>
+      </tbody>
     </table>
   )
 }
