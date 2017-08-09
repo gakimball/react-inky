@@ -75,7 +75,15 @@ describe('<Column />', () => {
   });
 
   it('can use context of <Container />', () => {
-    const wrapper = render(<Container columnCount={16}><Column></Column></Container>);
+    const wrapper = render(<Container columnCount={16}>
+        <table>
+          <tbody>
+            <tr>
+              <Column></Column>
+            </tr>
+          </tbody>
+        </table>
+      </Container>);
     expect(wrapper.find('.columns').parent().html()).html.to.equal(`
       <th is="true" class="small-16 large-16 columns">
         <table>
