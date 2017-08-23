@@ -31,8 +31,9 @@ export default function getAttrs(props, tag, className = '') {
   // `style` isn't included in `filterPropsFor` and must be copied manually
   if (props.style) output.style = props.style
 
-  // Same with `align`, since it's a deprecated attribute
+  // Same with `align` and `valign`, since they are deprecated attributes
   if (props.align) output.align = props.align;
+  if (props.valign) output.valign = props.valign;
 
   return output;
 }
