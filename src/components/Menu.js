@@ -1,5 +1,6 @@
-import React, { Children, cloneElement } from 'react';
+import React, {Children, cloneElement} from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
 
 export default function Menu(props) {
@@ -12,15 +13,26 @@ export default function Menu(props) {
             <tr>{Children.map(props.children, child => {
               if (props.align === 'center' && typeof child.type === 'function' && child.type.name === 'Item') {
                 return cloneElement(child, {
-                  className: classnames(child.props.className, 'float-center'),
+                  className: classnames(child.props.className, 'float-center')
                 });
               }
 
               return child;
-            })}</tr>
+            })}
+            </tr>
           </table>
         </td>
       </tr>
     </table>
-  )
+  );
 }
+
+Menu.propTypes = {
+  children: PropTypes.node,
+  align: PropTypes.string
+};
+
+Menu.defaultProps = {
+  children: null,
+  align: null
+};

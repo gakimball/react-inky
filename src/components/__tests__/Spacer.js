@@ -1,11 +1,11 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Spacer from '../Spacer';
 
 describe('<Spacer />', () => {
   it('renders a spacer with a default size', () => {
-    const wrapper = render(<Spacer className="custom-class" />);
+    const wrapper = render(<Spacer className="custom-class"/>);
 
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="spacer custom-class">
@@ -19,7 +19,7 @@ describe('<Spacer />', () => {
   });
 
   it('renders a spacer with a specific size', () => {
-    const wrapper = render(<Spacer size="10" />);
+    const wrapper = render(<Spacer size="10"/>);
 
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="spacer">
@@ -33,7 +33,7 @@ describe('<Spacer />', () => {
   });
 
   it('creates a small-only spacer', () => {
-    const wrapper = render(<Spacer sizeSm="10" />);
+    const wrapper = render(<Spacer sizeSm="10"/>);
 
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="spacer hide-for-large">
@@ -47,7 +47,7 @@ describe('<Spacer />', () => {
   });
 
   it('creates a large-only spacer', () => {
-    const wrapper = render(<Spacer sizeLg="10" />);
+    const wrapper = render(<Spacer sizeLg="10"/>);
 
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="spacer show-for-large">

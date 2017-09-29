@@ -1,6 +1,6 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Menu from '../Menu';
 import Item from '../Item';
 import Center from '../Center';
@@ -26,7 +26,7 @@ describe('<Menu />', () => {
     const wrapper = render(
       <Center>
         <Menu>
-          <Item href="#" />
+          <Item href="#"/>
         </Menu>
       </Center>
     );

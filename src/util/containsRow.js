@@ -1,4 +1,4 @@
-import { Children } from 'react';
+import {Children} from 'react';
 
 /**
  * Determine if a collection of React elements contains a `<Row />`.

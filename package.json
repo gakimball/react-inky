@@ -10,7 +10,7 @@
     "build": "babel src/ -d lib/",
     "docs:build": "gitbook build",
     "docs:serve": "gitbook serve",
-    "test": "mocha --compilers js:babel-register \"src/**/__tests__/*.js\"",
+    "test": "xo && mocha --compilers js:babel-register \"src/**/__tests__/*.js\"",
     "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
@@ -42,9 +42,25 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.5.1",
     "chai-html": "^1.1.0",
+    "dirty-chai": "^2.0.1",
     "enzyme": "^2.4.1",
+    "eslint-config-xo-react": "^0.13.0",
+    "eslint-plugin-react": "^7.4.0",
     "mocha": "^3.0.2",
     "react-dom": "^15.3.2",
-    "react-server": "^0.4.7"
+    "react-server": "^0.4.7",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": 2,
+    "extends": "xo-react",
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "rules": {
+      "react/forbid-component-props": "off",
+      "unicorn/filename-case": "off"
+    }
   }
 }

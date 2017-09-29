@@ -18,7 +18,7 @@ import getColumnClasses from '../util/getColumnClasses';
  *   </Column>
  * </Row>
  */
-export default function Column(props, { columnCount }) {
+export default function Column(props, {columnCount}) {
   const classes = getColumnClasses(props, columnCount);
   const hasRow = containsRow(props.children);
 
@@ -27,11 +27,11 @@ export default function Column(props, { columnCount }) {
       <table>
         <tr>
           <th>{props.children}</th>
-          {!hasRow && props.expander ? <th className="expander"></th> : null}
+          {!hasRow && props.expander ? <th className="expander"/> : null}
         </tr>
       </table>
     </th>
-  )
+  );
 }
 
 /**
@@ -42,6 +42,7 @@ export default function Column(props, { columnCount }) {
  * @prop {Boolean} [expander=true] Include expander `<th />` in column.
  * @prop {Boolean} [first=false] Column is the first child.
  * @prop {Boolean} [last=false] Column is the last child.
+ * @prop [children] - Child elements.
  */
 Column.propTypes = {
   small: PropTypes.string,
@@ -49,7 +50,8 @@ Column.propTypes = {
   expander: PropTypes.bool,
   first: PropTypes.bool,
   last: PropTypes.bool,
-}
+  children: PropTypes.node
+};
 
 /**
  * Default props for `<Column />`.
@@ -59,7 +61,10 @@ Column.defaultProps = {
   expander: true,
   first: false,
   last: false,
-}
+  children: null,
+  small: null,
+  large: null
+};
 
 /**
  * Context accessible from parent components.
@@ -67,5 +72,5 @@ Column.defaultProps = {
  * @prop {Number} columnCount - Default column count. Inherited from `<Container />`.
  */
 Column.contextTypes = {
-  columnCount: PropTypes.number,
-}
+  columnCount: PropTypes.number
+};

@@ -1,11 +1,11 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Inky from '../Inky';
 
 describe('<Inky />', () => {
   it('releases the kraken', () => {
-    const wrapper = render(<Inky />);
+    const wrapper = render(<Inky/>);
 
     expect(wrapper.html()).html.to.equal(`
       <tr>

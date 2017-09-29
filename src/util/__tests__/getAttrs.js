@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import getAttrs from '../getAttrs';
 
 describe('getAttrs()', () => {
@@ -8,10 +8,10 @@ describe('getAttrs()', () => {
     const props = {
       large: 6,
       small: 12,
-      style: { background: 'white' },
+      style: {background: 'white'},
       className: 'header',
-      align: 'center',
-    }
+      align: 'center'
+    };
     output = getAttrs(props, 'table', 'row');
   });
 

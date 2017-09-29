@@ -12,6 +12,6 @@ export default function getColumnClasses(props, defaultCount = 12) {
 
   return classnames('columns', `small-${smallSize}`, `large-${largeSize}`, {
     first: props.first,
-    last: props.last,
+    last: props.last
   });
 }

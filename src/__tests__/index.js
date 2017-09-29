@@ -1,10 +1,12 @@
-import chai, { expect } from 'chai';
+import chai, {expect} from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import chaiHtml from 'chai-html';
+import dirtyChai from 'dirty-chai';
 import inky from '../';
 
 chai.use(chaiEnzyme);
 chai.use(chaiHtml);
+chai.use(dirtyChai);
 
 describe('inky()', () => {
   const input = '<div></div>';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { expect } from 'chai';
-import { shallow, render } from 'enzyme';
+import {expect} from 'chai';
+import {shallow, render} from 'enzyme';
 import Container from '../Container';
 
 describe('<Container />', () => {
@@ -19,16 +19,16 @@ describe('<Container />', () => {
   });
 
   it('sets context', () => {
-    const wrapper = shallow(<Container />);
+    const wrapper = shallow(<Container/>);
     expect(wrapper.instance().getChildContext()).to.eql({
-      columnCount: 12,
+      columnCount: 12
     });
   });
 
   it('allows global column count to be changed', () => {
-    const wrapper = shallow(<Container columnCount={16} />);
+    const wrapper = shallow(<Container columnCount={16}/>);
     expect(wrapper.instance().getChildContext()).to.eql({
-      columnCount: 16,
+      columnCount: 16
     });
   });
 });

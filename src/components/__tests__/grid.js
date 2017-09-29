@@ -1,6 +1,6 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Row from '../Row';
 import Column from '../Column';
 
@@ -8,8 +8,8 @@ describe('Grid', () => {
   it('can render nested grids', () => {
     const wrapper = render(
       <Row>
-        <Column first={true} last={true}>
-          <Row></Row>
+        <Column first last>
+          <Row/>
         </Column>
       </Row>
     );
@@ -40,8 +40,8 @@ describe('Grid', () => {
   it('can detect the first and last child in a row', () => {
     const wrapper = render(
       <Row>
-        <Column></Column>
-        <Column></Column>
+        <Column/>
+        <Column/>
       </Row>
     );
 

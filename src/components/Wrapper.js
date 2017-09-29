@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
 
 export default function Wrapper(props) {
@@ -10,3 +11,18 @@ export default function Wrapper(props) {
     </table>
   );
 }
+
+/**
+ * Prop types for `<Wrapper />`.
+ * @prop [children] - Child elements.
+ */
+Wrapper.propTypes = {
+  children: PropTypes.node
+};
+
+/**
+ * Default props for `<Wrapper />`.
+ */
+Wrapper.defaultProps = {
+  children: null
+};

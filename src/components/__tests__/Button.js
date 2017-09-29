@@ -1,6 +1,6 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Button from '../Button';
 
 describe('<Button />', () => {
@@ -22,7 +22,7 @@ describe('<Button />', () => {
   });
 
   it('allows a target to be set', () => {
-    const wrapper = render(<Button href="example.com" target="_blank" />);
+    const wrapper = render(<Button href="example.com" target="_blank"/>);
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="button">
         <tr>
@@ -39,7 +39,7 @@ describe('<Button />', () => {
   });
 
   it('renders an expanded button', () => {
-    const wrapper = render(<Button className="expand" href="example.com" />);
+    const wrapper = render(<Button className="expand" href="example.com"/>);
     expect(wrapper.html()).html.to.equal(`
       <table is="true" class="button expand">
         <tr>

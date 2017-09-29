@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
 
@@ -22,8 +22,8 @@ export default class Container extends Component {
      * @prop {Number} columnCount - Global column count.
      */
     return {
-      columnCount: this.props.columnCount,
-    }
+      columnCount: this.props.columnCount
+    };
   }
 
   /**
@@ -46,19 +46,22 @@ export default class Container extends Component {
 /**
  * Prop types for `<Container />`.
  * @type Object
+ * @prop [children] Child elements.
  * @prop {Number} [columnCount=12] Global column count.
  */
 Container.propTypes = {
-  columnCount: PropTypes.number,
-}
+  children: PropTypes.node,
+  columnCount: PropTypes.number
+};
 
 /**
  * Default props for `<Container />`.
  * @type Object
  */
 Container.defaultProps = {
-  columnCount: 12,
-}
+  children: null,
+  columnCount: 12
+};
 
 /**
  * Context to be passed down to child elements.
@@ -66,5 +69,5 @@ Container.defaultProps = {
  * @prop {Number} columnCount - Global column count accessible by `<Column />`.
  */
 Container.childContextTypes = {
-  columnCount: PropTypes.number,
-}
+  columnCount: PropTypes.number
+};

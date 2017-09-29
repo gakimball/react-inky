@@ -1,12 +1,12 @@
 import React from 'react';
-import { expect } from 'chai';
-import { render } from 'enzyme';
+import {expect} from 'chai';
+import {render} from 'enzyme';
 import Column from '../Column';
 import Container from '../Container';
 
 describe('<Column />', () => {
   it('creates a basic column', () => {
-    const wrapper = render(<Column />);
+    const wrapper = render(<Column/>);
     expect(wrapper.html()).html.to.equal(`
       <th is="true" class="small-12 large-12 columns">
         <table>
@@ -20,7 +20,7 @@ describe('<Column />', () => {
   });
 
   it('renders a column with first class', () => {
-    const wrapper = render(<Column first={true} />);
+    const wrapper = render(<Column first/>);
     expect(wrapper.html()).html.to.equal(`
       <th is="true" class="small-12 large-12 columns first">
         <table>
@@ -34,7 +34,7 @@ describe('<Column />', () => {
   });
 
   it('renders a column with last class', () => {
-    const wrapper = render(<Column last={true} />);
+    const wrapper = render(<Column last/>);
     expect(wrapper.html()).html.to.equal(`
       <th is="true" class="small-12 large-12 columns last">
         <table>
@@ -48,7 +48,7 @@ describe('<Column />', () => {
   });
 
   it('allows expander to be removed', () => {
-    const wrapper = render(<Column expander={false} />);
+    const wrapper = render(<Column expander={false}/>);
     expect(wrapper.html()).html.to.equal(`
       <th is="true" class="small-12 large-12 columns">
         <table>
@@ -75,7 +75,7 @@ describe('<Column />', () => {
   });
 
   it('can use context of <Container />', () => {
-    const wrapper = render(<Container columnCount={16}><Column></Column></Container>);
+    const wrapper = render(<Container columnCount={16}><Column/></Container>);
     expect(wrapper.find('.columns').parent().html()).html.to.equal(`
       <th is="true" class="small-16 large-16 columns">
         <table>
