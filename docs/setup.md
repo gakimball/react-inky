@@ -8,17 +8,17 @@ Install react-inky from npm.
 npm install react-inky --save
 ```
 
-Because react-inky is a React library, you need to compile your code using Babel, specifically with the `latest` and `react` presets. If you don't have them already, install those presets into your project with:
+Because react-inky is a React library, you need to compile your code using Babel, specifically with the `env` and `react` presets. If you don't have them already, install those presets into your project with:
 
 ```bash
-npm install babel-preset-latest babel-preset-react --save-dev
+npm install babel-preset-env babel-preset-react --save-dev
 ```
 
 Your `.babelrc` should look like this:
 
 ```json
 {
-  "presets": ["latest", "react"]
+  "presets": ["env", "react"]
 }
 ```
 
@@ -26,12 +26,12 @@ Your `.babelrc` should look like this:
 
 ## Usage
 
-To convert your React-powered email into a plain HTML email, use ReactDOM's `renderToString()` function, which converts a React component into static HTML.
+To convert your React-powered email into a plain HTML email, use ReactDOM's `renderToString()` function, which converts a React component into a string of HTML.
 
 In the below example, our email template component includes a prop, making its contents dynamic.
 
 ```jsx
-import { Container, Row, Column } from 'react-inky';
+import Inky, { Container, Row, Column } from 'react-inky';
 import { renderToString } from 'react-dom/server';
 
 function EmailTemplate({ name }) {
@@ -44,28 +44,25 @@ function EmailTemplate({ name }) {
   );
 }
 
-const template = <EmailTemplate name="Inky" />;
-renderToString(template); // => <table class="container">...</table>
+renderToString((
+  <Inky>
+    <Inky.Head>
+      <link rel="stylesheet" href="style.css" />
+    </Inky.Head>
+    <Inky.Body preview="Preview text">
+      <EmailTemplate name="Inky" />
+    </Inky.Body>
+  </Inky>
+));
 ```
 
-This isn't quite enough, however. The `<Container />` component doesn't include the boilerplate required to build a full HTML email: the doctype, `<html>`, `<head>`, `<body>` and so on. JSX can't render an HTML doctype, and since the boilerplate rarely changes anyway, react-inky bundles it into a function.
+Note that, while most React projects use the HTML5 doctype, email templates use the XHTML Strict doctype. React doesn't add this automatically when rendering, so you'll need to add it before the final HTML of your email template.
 
-Pass your email template to the `inky()` function *before* passing it to `renderToString()`. The `inky()` function will wrap your email in the Foundation for Emails boilerplate.
+The doctype string is included with react-inky:
 
 ```jsx
-import inky, { Container, Row, Column } from 'react-inky';
+import Inky from 'inky';
 import { renderToString } from 'react-dom/server';
 
-function EmailTemplate({ name }) {
-  return (
-    <Container>
-      <Row>
-        <Column>Hello, {name}!</Column>
-      </Row>
-    </Container>
-  );
-}
-
-const template = <EmailTemplate name="Inky" />;
-renderToString(inky(template)); // => <!DOCTYPE html PUBLIC...
+const html = Inky.doctype + renderToString(/* Template */);
 ```
