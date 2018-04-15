@@ -1,6 +1,6 @@
 {
   "name": "react-inky",
-  "version": "0.2.2",
+  "version": "0.3.0-alpha.1",
   "description": "React components for Inky",
   "main": "lib/index.js",
   "files": [
