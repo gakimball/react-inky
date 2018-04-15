@@ -2,7 +2,6 @@
 
 - [Introduction](README.md)
 - [Setup](setup.md)
-- [Differences from Inky](differences.md)
 - Components
   - [Grid](components/grid.md)
   - [Button](components/button.md)

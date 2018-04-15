@@ -66,3 +66,13 @@ import { renderToString } from 'react-dom/server';
 
 const html = Inky.doctype + renderToString(/* Template */);
 ```
+
+## Configuration
+
+To change the column count of the grid, add a `columnCount` prop to the `<Container />` of your email. Remember to also change the `$grid-column-count` variable in your Sass.
+
+```jsx
+<Container columnCount={16}>
+  {/* ... */}
+</Container>
+```
