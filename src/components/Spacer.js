@@ -45,15 +45,14 @@ export default function Spacer(props) {
 /**
  * Prop types for `<Spacer />`.
  * @type Object
- * @prop {String} [size='16'] Height of spacer in pixels.
- * @prop {String} sizeSm - Height of spacer in pixels, and it will only appear on small screens.
- * @prop {String} sizeLg - Height of spacer in pixels, and it will only appear on large screens.
- * @todo Make `size` a numeric prop instead of string.
+ * @prop {Number} size - Height of spacer in pixels. Using this prop _only_ will create a spacer that displays on all screen sizes.
+ * @prop {Number} sizeSm - Height of spacer in pixels. Using this prop creates a spacer that appears only on small screens.
+ * @prop {Number} sizeLg - Height of spacer in pixels. Using this prop creates a spacer that appears only on small screens.
  */
 Spacer.propTypes = {
-  size: PropTypes.string,
-  sizeSm: PropTypes.string,
-  sizeLg: PropTypes.string
+  size: PropTypes.number,
+  sizeSm: PropTypes.number,
+  sizeLg: PropTypes.number
 };
 
 /**
@@ -61,7 +60,7 @@ Spacer.propTypes = {
  * @type Object
  */
 Spacer.defaultProps = {
-  size: '16',
+  size: 16,
   sizeSm: null,
   sizeLg: null
 };
