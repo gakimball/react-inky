@@ -45,6 +45,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-react": "^7.4.0",
+    "gitbook-cli": "^2.3.2",
     "mocha": "^3.0.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
