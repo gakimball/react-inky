@@ -1,6 +1,6 @@
 import React from 'react';
 import {expect} from 'chai';
-import {render} from 'enzyme';
+import render from '../../__tests__/util/render';
 import Wrapper from '../Wrapper';
 
 describe('<Wrapper />', () => {
@@ -9,8 +9,8 @@ describe('<Wrapper />', () => {
       <Wrapper className="custom-class">Wrapper</Wrapper>
     );
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" align="center" class="wrapper custom-class">
+    expect(wrapper).html.to.equal(`
+      <table align="center" class="wrapper custom-class">
         <tr>
           <td class="wrapper-inner">Wrapper</td>
         </tr>

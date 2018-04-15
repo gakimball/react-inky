@@ -13,7 +13,7 @@ export default function Button(props) {
             <tr>
               <td>
                 {expanded ?
-                  <center><a is href={props.href} target={props.target} align="center" class="float-center">{props.children}</a></center> :
+                  <center><a href={props.href} target={props.target} align="center" className="float-center">{props.children}</a></center> :
                   <a href={props.href} target={props.target}>{props.children}</a>
                 }
               </td>

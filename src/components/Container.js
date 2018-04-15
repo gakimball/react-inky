@@ -32,7 +32,7 @@ export default class Container extends Component {
    */
   render() {
     return (
-      <table is align="center" {...getAttrs(this.props, 'table', 'container')}>
+      <table align="center" {...getAttrs(this.props, 'table', 'container')}>
         <tbody>
           <tr>
             <td>{this.props.children}</td>

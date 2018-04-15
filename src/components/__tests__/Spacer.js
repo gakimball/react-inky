@@ -1,59 +1,102 @@
+/* eslint-disable no-irregular-whitespace */
+
 import React from 'react';
 import {expect} from 'chai';
-import {render} from 'enzyme';
+import render from '../../__tests__/util/render';
 import Spacer from '../Spacer';
 
 describe('<Spacer />', () => {
-  it('renders a spacer with a default size', () => {
-    const wrapper = render(<Spacer className="custom-class"/>);
+  it('creates a spacer element with correct size', () => {
+    const wrapper = render(<Spacer size={10}/>);
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="spacer custom-class">
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer">
         <tbody>
           <tr>
-            <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td>
+            <td height="10px" style="font-size:10px;line-height:10px"> </td>
           </tr>
         </tbody>
       </table>
     `);
   });
 
-  it('renders a spacer with a specific size', () => {
-    const wrapper = render(<Spacer size="10"/>);
+  it('creates a spacer with a default size or no size defined', () => {
+    const wrapper = render(<Spacer/>);
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="spacer">
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer">
         <tbody>
           <tr>
-            <td height="10px" style="font-size:10px;line-height:10px;">&#xA0;</td>
+            <td height="16px" style="font-size:16px;line-height:16px"> </td>
           </tr>
         </tbody>
       </table>
     `);
   });
 
-  it('creates a small-only spacer', () => {
-    const wrapper = render(<Spacer sizeSm="10"/>);
+  it('creates a spacer element for small screens with correct size', () => {
+    const wrapper = render(<Spacer sizeSm={10}/>);
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="spacer hide-for-large">
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer hide-for-large">
         <tbody>
           <tr>
-            <td height="10px" style="font-size:10px;line-height:10px;">&#xA0;</td>
+            <td height="10px" style="font-size:10px;line-height:10px"> </td>
           </tr>
         </tbody>
       </table>
     `);
   });
 
-  it('creates a large-only spacer', () => {
-    const wrapper = render(<Spacer sizeLg="10"/>);
+  it('creates a spacer element for large screens with correct size', () => {
+    const wrapper = render(<Spacer sizeLg={20}/>);
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="spacer show-for-large">
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer show-for-large">
         <tbody>
           <tr>
-            <td height="10px" style="font-size:10px;line-height:10px;">&#xA0;</td>
+            <td height="20px" style="font-size:20px;line-height:20px"> </td>
+          </tr>
+        </tbody>
+      </table>
+    `);
+  });
+
+  it('creates a spacer element for small and large screens with correct sizes', () => {
+    const wrapper = render(<Spacer sizeSm={10} sizeLg={20}/>);
+
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer hide-for-large">
+        <tbody>
+          <tr>
+            <td height="10px" style="font-size:10px;line-height:10px"> </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="spacer show-for-large">
+        <tbody>
+          <tr>
+            <td height="20px" style="font-size:20px;line-height:20px"> </td>
+          </tr>
+        </tbody>
+      </table>
+    `);
+  });
+
+  it('copies classes to the final spacer HTML', () => {
+    const wrapper = render(<Spacer size={10} className="bgColor"/>);
+
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table class="spacer bgColor">
+        <tbody>
+          <tr>
+            <td height="10px" style="font-size:10px;line-height:10px"> </td>
           </tr>
         </tbody>
       </table>

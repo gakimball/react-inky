@@ -20,11 +20,11 @@ describe('getAttrs()', () => {
   });
 
   it('filters out custom props', () => {
-    expect(output).to.have.all.keys(['style', 'class', 'align']);
+    expect(output).to.have.all.keys(['style', 'className', 'align']);
   });
 
   it('adds class names', () => {
-    expect(output.class).to.equal('row header');
+    expect(output.className).to.equal('row header');
   });
 
   it('adds align manually', () => {

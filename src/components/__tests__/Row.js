@@ -1,6 +1,6 @@
 import React from 'react';
 import {expect} from 'chai';
-import {render} from 'enzyme';
+import render from '../../__tests__/util/render';
 import Row from '../Row';
 
 describe('<Row />', () => {
@@ -9,8 +9,8 @@ describe('<Row />', () => {
       <Row className="custom-class"><td/></Row>
     );
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="row custom-class">
+    expect(wrapper).html.to.equal(`
+      <table class="row custom-class">
         <tbody>
           <tr><td></td></tr>
         </tbody>

@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import getAttrs from '../util/getAttrs';
+
+const createSpacer = (props, size, state = false) => (
+  <table {...getAttrs(props, 'table', classnames('spacer', state && `${state}-for-large`))}>
+    <tbody>
+      <tr>
+        <td
+          height={`${size}px`}
+          style={{
+            fontSize: `${size}px`,
+            lineHeight: `${size}px`
+          }}
+        >
+          &nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+);
 
 /**
  * Spacer component to create vertical space between elements.
@@ -12,28 +30,15 @@ import getAttrs from '../util/getAttrs';
  * <Button href="example.com/learnmore.html">Learn More</Button>
  */
 export default function Spacer(props) {
-  const classes = classnames('spacer', {
-    'hide-for-large': props.sizeSm,
-    'show-for-large': props.sizeLg
-  });
-
-  const size = props.sizeLg || props.sizeSm || props.size;
+  if (!props.sizeSm && !props.sizeLg) {
+    return createSpacer(props, props.size);
+  }
 
   return (
-    <table is {...getAttrs(props, 'table', classes)}>
-      <tbody>
-        <tr>
-          <td
-            height={`${size}px`}
-            style={{
-              fontSize: `${size}px`,
-              lineHeight: `${size}px`
-            }}
-          >&#xA0;
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <Fragment>
+      {props.sizeSm && createSpacer(props, props.sizeSm, 'hide')}
+      {props.sizeLg && createSpacer(props, props.sizeLg, 'show')}
+    </Fragment>
   );
 }
 

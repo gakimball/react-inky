@@ -12,7 +12,7 @@ import getAttrs from '../util/getAttrs';
  */
 export default function Row(props) {
   return (
-    <table is {...getAttrs(props, 'table', 'row')}>
+    <table {...getAttrs(props, 'table', 'row')}>
       <tbody>
         {/* `first` and `last` props are added to the first and last child in the row, respectively */}
         <tr>{Children.map(props.children, (child, index) => cloneElement(child, {

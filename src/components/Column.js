@@ -23,7 +23,7 @@ export default function Column(props, {columnCount}) {
   const hasRow = containsRow(props.children);
 
   return (
-    <th is {...getAttrs(props, 'th', classes)}>
+    <th {...getAttrs(props, 'th', classes)}>
       <table>
         <tr>
           <th>{props.children}</th>

@@ -7,12 +7,9 @@ export default function Center(props) {
     <center>
       {/* Add centering attributes and classes to children */}
       {Children.map(props.children, child => {
-        const isReactElement = typeof child.type === 'function';
-
         return cloneElement(child, {
-          is: true,
           align: 'center',
-          [isReactElement ? 'className' : 'class']: classnames(child.props.className, 'float-center')
+          className: classnames(child.props.className, 'float-center')
         });
       })}
     </center>

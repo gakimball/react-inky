@@ -5,7 +5,7 @@ import getAttrs from '../util/getAttrs';
 
 export default function Menu(props) {
   return (
-    <table is {...getAttrs(props, 'table', 'menu')}>
+    <table {...getAttrs(props, 'table', 'menu')}>
       <tr>
         <td>
           <table>

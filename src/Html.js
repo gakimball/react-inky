@@ -32,7 +32,7 @@ function Body({children, preview}) {
       {preview && <span className="preheader">{preview}</span>}
       <table className="body" data-made-with-foundation>
         <tr>
-          <td is class="float-center" align="center" valign="top">
+          <td className="float-center" align="center" valign="top">
             <Center>
               {children}
             </Center>

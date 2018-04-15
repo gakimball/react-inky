@@ -1,6 +1,6 @@
 import React from 'react';
 import {expect} from 'chai';
-import {render} from 'enzyme';
+import render from '../../__tests__/util/render';
 import Row from '../Row';
 import Column from '../Column';
 
@@ -14,15 +14,15 @@ describe('Grid', () => {
       </Row>
     );
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="row">
+    expect(wrapper).html.to.equal(`
+      <table class="row">
         <tbody>
           <tr>
-            <th is="true" class="small-12 large-12 columns first last">
+            <th class="small-12 large-12 columns first last">
               <table>
                 <tr>
                   <th>
-                    <table is="true" class="row">
+                    <table class="row">
                       <tbody>
                         <tr></tr>
                       </tbody>
@@ -45,11 +45,11 @@ describe('Grid', () => {
       </Row>
     );
 
-    expect(wrapper.html()).html.to.equal(`
-      <table is="true" class="row">
+    expect(wrapper).html.to.equal(`
+      <table class="row">
         <tbody>
           <tr>
-            <th is="true" class="small-12 large-12 columns first">
+            <th class="small-12 large-12 columns first">
               <table>
                 <tr>
                   <th></th>
@@ -57,7 +57,7 @@ describe('Grid', () => {
                 </tr>
               </table>
             </th>
-            <th is="true" class="small-12 large-12 columns last">
+            <th class="small-12 large-12 columns last">
               <table>
                 <tr>
                   <th></th>
