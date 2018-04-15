@@ -5,8 +5,10 @@
 Install react-inky from npm.
 
 ```bash
-npm install react-inky --save
+npm install react-inky react react-dom --save
 ```
+
+react-inky depends on React 16.2 or higher.
 
 Because react-inky is a React library, you need to compile your code using Babel, specifically with the `env` and `react` presets. If you don't have them already, install those presets into your project with:
 
