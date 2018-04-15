@@ -65,5 +65,8 @@
       "react/forbid-component-props": "off",
       "unicorn/filename-case": "off"
     }
+  },
+  "engines": {
+    "node": ">=6"
   }
 }
