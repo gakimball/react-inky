@@ -1,3 +1,5 @@
 {
-  "root": "docs"
+  "root": "docs",
+  "title": "react-inky",
+  "description": "React components for Inky"
 }
