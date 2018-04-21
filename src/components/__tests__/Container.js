@@ -1,12 +1,12 @@
 import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
 import Container from '../Container';
-import render from '../../__tests__/util/render';
 
 describe('<Container />', () => {
   it('renders a container', () => {
-    const wrapper = render(<Container className="custom-class">Container</Container>);
+    const wrapper = renderToStaticMarkup(<Container className="custom-class">Container</Container>);
 
     expect(wrapper).html.to.equal(`
       <table align="center" class="container custom-class">

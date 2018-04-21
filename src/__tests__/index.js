@@ -1,13 +1,13 @@
 /* eslint-disable no-irregular-whitespace */
 
 import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 import chai, {expect} from 'chai';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import chaiHtml from 'chai-html';
 import dirtyChai from 'dirty-chai';
 import Inky from '../';
-import render from './util/render';
 
 Enzyme.configure({
   adapter: new Adapter()
@@ -17,7 +17,7 @@ chai.use(dirtyChai);
 
 describe('Inky', () => {
   it('renders the boilerplate of an email', () => {
-    const wrapper = render((
+    const wrapper = renderToStaticMarkup((
       <Inky>
         <Inky.Head>
           <link rel="stylesheet" href="style.css"/>

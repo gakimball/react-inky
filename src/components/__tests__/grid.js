@@ -1,12 +1,12 @@
 import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {expect} from 'chai';
-import render from '../../__tests__/util/render';
 import Row from '../Row';
 import Column from '../Column';
 
 describe('Grid', () => {
   it('can render nested grids', () => {
-    const wrapper = render(
+    const wrapper = renderToStaticMarkup(
       <Row>
         <Column first last>
           <Row/>
@@ -38,7 +38,7 @@ describe('Grid', () => {
   });
 
   it('can detect the first and last child in a row', () => {
-    const wrapper = render(
+    const wrapper = renderToStaticMarkup(
       <Row>
         <Column/>
         <Column/>

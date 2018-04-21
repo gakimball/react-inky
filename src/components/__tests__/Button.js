@@ -1,11 +1,11 @@
 import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {expect} from 'chai';
-import render from '../../__tests__/util/render';
 import Button from '../Button';
 
 describe('<Button />', () => {
   it('renders a basic button', () => {
-    const wrapper = render(<Button className="custom-class" href="example.com">Button</Button>);
+    const wrapper = renderToStaticMarkup(<Button className="custom-class" href="example.com">Button</Button>);
 
     expect(wrapper).html.to.equal(`
       <table class="button custom-class">
@@ -23,7 +23,7 @@ describe('<Button />', () => {
   });
 
   it('allows a target to be set', () => {
-    const wrapper = render(<Button href="example.com" target="_blank"/>);
+    const wrapper = renderToStaticMarkup(<Button href="example.com" target="_blank"/>);
     expect(wrapper).html.to.equal(`
       <table class="button">
         <tr>
@@ -40,7 +40,7 @@ describe('<Button />', () => {
   });
 
   it('renders an expanded button', () => {
-    const wrapper = render(<Button className="expand" href="example.com"/>);
+    const wrapper = renderToStaticMarkup(<Button className="expand" href="example.com"/>);
     expect(wrapper).html.to.equal(`
       <table class="button expand">
         <tr>

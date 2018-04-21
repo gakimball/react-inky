@@ -1,11 +1,11 @@
 import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {expect} from 'chai';
-import render from '../../__tests__/util/render';
 import Row from '../Row';
 
 describe('<Row />', () => {
   it('renders a row', () => {
-    const wrapper = render(
+    const wrapper = renderToStaticMarkup(
       <Row className="custom-class"><td/></Row>
     );
 
