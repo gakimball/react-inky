@@ -28,13 +28,13 @@ Your `.babelrc` should look like this:
 
 ## Usage
 
-To convert your React-powered email into a plain HTML email, use ReactDOM's `renderToString()` function, which converts a React component into a string of HTML.
+To convert your React-powered email into a plain HTML email, use ReactDOM's `renderToStaticMarkup()` function, which converts a React component into a string of HTML.
 
 In the below example, our email template component includes a prop, making its contents dynamic.
 
 ```jsx
 import Inky, { Container, Row, Column } from 'react-inky';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 function EmailTemplate({ name }) {
   return (
@@ -46,7 +46,7 @@ function EmailTemplate({ name }) {
   );
 }
 
-renderToString((
+renderToStaticMarkup((
   <Inky>
     <Inky.Head>
       <link rel="stylesheet" href="style.css" />

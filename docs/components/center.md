@@ -1,4 +1,4 @@
-# Callout
+# Center
 
 Use the center component to horizontally center an element within its container. This is most commonly used for images.
 
