@@ -2,7 +2,8 @@
 
 > React components for Inky
 
-[![Travis](https://img.shields.io/travis/gakimball/react-inky.svg?maxAge=2592000)](https://travis-ci.org/gakimball/react-inky) [![npm](https://img.shields.io/npm/v/react-inky.svg?maxAge=2592000)](https://www.npmjs.com/package/react-inky)
+[![Travis](https://badgen.now.sh/travis/gakimball/react-inky)](https://travis-ci.org/gakimball/react-inky) [![npm](https://badgen.now.sh/npm/v/react-inky)](https://www.npmjs.com/package/react-inky)
+![8 tentacles](https://badgen.now.sh/badge/tentacles/8/purple)
 
 ## Installation
 
