@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import containsRow from '../util/containsRow';
 import getAttrs from '../util/getAttrs';
 import getColumnClasses from '../util/getColumnClasses';
+import GridContext from '../util/gridContext';
 
 /**
  * Grid column. Place sections of email content inside these.
@@ -18,19 +19,22 @@ import getColumnClasses from '../util/getColumnClasses';
  *   </Column>
  * </Row>
  */
-export default function Column(props, {columnCount}) {
-  const classes = getColumnClasses(props, columnCount);
+export default function Column(props) {
   const hasRow = containsRow(props.children);
 
   return (
-    <th {...getAttrs(props, 'th', classes)}>
-      <table>
-        <tr>
-          <th>{props.children}</th>
-          {!hasRow && props.expander ? <th className="expander"/> : null}
-        </tr>
-      </table>
-    </th>
+    <GridContext.Consumer>
+      {columnCount => (
+        <th {...getAttrs(props, 'th', getColumnClasses(props, columnCount))}>
+          <table>
+            <tr>
+              <th>{props.children}</th>
+              {!hasRow && props.expander ? <th className="expander"/> : null}
+            </tr>
+          </table>
+        </th>
+      )}
+    </GridContext.Consumer>
   );
 }
 
@@ -64,13 +68,4 @@ Column.defaultProps = {
   children: null,
   small: null,
   large: null
-};
-
-/**
- * Context accessible from parent components.
- * @type Object
- * @prop {Number} columnCount - Default column count. Inherited from `<Container />`.
- */
-Column.contextTypes = {
-  columnCount: PropTypes.number
 };
