@@ -10,7 +10,7 @@
     "build": "babel src/ -d lib/ --ignore __tests__",
     "docs:build": "gitbook build",
     "docs:serve": "gitbook serve",
-    "test": "xo && mocha --compilers js:babel-register \"src/**/__tests__/*.js\"",
+    "test": "xo && mocha --require babel-register \"src/**/__tests__/*.js\"",
     "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
