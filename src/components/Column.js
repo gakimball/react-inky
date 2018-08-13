@@ -9,6 +9,9 @@ import GridContext from '../util/gridContext';
  * Grid column. Place sections of email content inside these.
  * @todo Remove expander if housing a nested grid
  *
+ * @param {Object} props - Component props.
+ * @returns {Object} Column HTML.
+ *
  * @example
  * <Row>
  *   <Column small="12" large="4">

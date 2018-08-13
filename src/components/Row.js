@@ -5,6 +5,9 @@ import getAttrs from '../util/getAttrs';
 /**
  * Grid row. Use this to define a grid containing a set of columns.
  *
+ * @param {Object} props - Component props.
+ * @returns {Object} Row HTML.
+ *
  * @example
  * <Row>
  *   <Column></Column>

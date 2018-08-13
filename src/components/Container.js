@@ -6,6 +6,9 @@ import GridContext from '../util/gridContext';
 /**
  * Top-level container for an email. Use this as the root of your email template.
  *
+ * @param {Object} props - Component props.
+ * @returns {Object} Container HTML.
+ *
  * @example
  * <Container>
  *   Lorem ipsum dolor sit amet.

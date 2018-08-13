@@ -43,13 +43,13 @@
     "dirty-chai": "^2.0.1",
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.2.0",
-    "eslint-config-xo-react": "^0.13.0",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint-config-xo-react": "^0.17.0",
+    "eslint-plugin-react": "^7.10.0",
     "gitbook-cli": "^2.3.2",
     "mocha": "^5.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "xo": "^0.18.2"
+    "xo": "^0.22.0"
   },
   "peerDependencies": {
     "react": "^16.3.0"

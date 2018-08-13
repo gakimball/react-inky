@@ -24,6 +24,9 @@ const createSpacer = (props, size, state = false) => (
 /**
  * Spacer component to create vertical space between elements.
  *
+ * @param {Object} props - Component props.
+ * @returns {Object} Spacer HTML.
+ *
  * @example
  * <Button href="example.com/signup.html">Sign Up</Button>
  * <Spacer size="10" />

@@ -7,7 +7,7 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import chaiHtml from 'chai-html';
 import dirtyChai from 'dirty-chai';
-import Inky from '../';
+import Inky from '..';
 
 Enzyme.configure({
   adapter: new Adapter()
