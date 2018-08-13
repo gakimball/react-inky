@@ -30,4 +30,13 @@ describe('<Center />', () => {
       </center>
     `);
   });
+
+  it('adds nothing to a non-element node', () => {
+    const wrapper = renderToStaticMarkup(<Center>Text</Center>);
+    expect(wrapper).html.to.equal(`
+      <center>
+        Text
+      </center>
+    `);
+  });
 });

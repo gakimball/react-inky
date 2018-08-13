@@ -1,4 +1,4 @@
-import React, {Children, cloneElement} from 'react';
+import React, {Children, cloneElement, isValidElement} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -7,10 +7,14 @@ export default function Center(props) {
     <center>
       {/* Add centering attributes and classes to children */}
       {Children.map(props.children, child => {
-        return cloneElement(child, {
-          align: 'center',
-          className: classnames(child.props.className, 'float-center')
-        });
+        if (isValidElement(child)) {
+          return cloneElement(child, Object.assign({}, child.props, {
+            align: 'center',
+            className: classnames(child.props.className, 'float-center')
+          }));
+        }
+
+        return child;
       })}
     </center>
   );
