@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import containsRow from '../util/containsRow';
 import getAttrs from '../util/getAttrs';
 import getColumnClasses from '../util/getColumnClasses';
-import GridContext from '../util/gridContext';
+import ContainerContext from '../util/containerContext';
 
 /**
  * Grid column. Place sections of email content inside these.
@@ -26,8 +26,8 @@ export default function Column(props) {
   const hasRow = containsRow(props.children);
 
   return (
-    <GridContext.Consumer>
-      {columnCount => (
+    <ContainerContext.Consumer>
+      {({columnCount}) => (
         <th {...getAttrs(props, 'th', getColumnClasses(props, columnCount))}>
           <table>
             <tr>
@@ -37,7 +37,7 @@ export default function Column(props) {
           </table>
         </th>
       )}
-    </GridContext.Consumer>
+    </ContainerContext.Consumer>
   );
 }
 

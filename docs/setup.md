@@ -71,6 +71,8 @@ const html = Inky.doctype + renderToString(/* Template */);
 
 ## Configuration
 
+### Grid
+
 To change the column count of the grid, add a `columnCount` prop to the `<Container />` of your email. Remember to also change the `$grid-column-count` variable in your Sass.
 
 ```jsx
@@ -78,3 +80,11 @@ To change the column count of the grid, add a `columnCount` prop to the `<Contai
   {/* ... */}
 </Container>
 ```
+
+### Strict Mode
+
+react-inky aims to recreate the HTML output of the original Inky library exactly. However, there are some instances where we want to make changes to fix bugs that haven't been fixed in the original Inky. To opt in to these changes, add the prop `strictMode={false}` to your `<Container />`.
+
+These are the differences when strict mode is turned off:
+
+- `<Spacer />`: uses a unitless value for the `height` attribute of the `<td />`. Some versions of Outlook don't display Spacers properly if the `height` has a `px` in it.

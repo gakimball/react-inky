@@ -4,6 +4,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {expect} from 'chai';
 import Spacer from '../Spacer';
+import Container from '../Container';
 
 describe('<Spacer />', () => {
   it('creates a spacer element with correct size', () => {
@@ -97,6 +98,29 @@ describe('<Spacer />', () => {
         <tbody>
           <tr>
             <td height="10px" style="font-size:10px;line-height:10px"> </td>
+          </tr>
+        </tbody>
+      </table>
+    `);
+  });
+
+  it('with strict mode off, uses a unitless value for height', () => {
+    const wrapper = renderToStaticMarkup(<Container strictMode={false}><Spacer size={10}/></Container>);
+
+    // Caution: the space inside <td> is a non-breaking space
+    expect(wrapper).html.to.equal(`
+      <table align="center" class="container">
+        <tbody>
+          <tr>
+            <td>
+              <table class="spacer">
+                <tbody>
+                  <tr>
+                    <td height="10" style="font-size:10px;line-height:10px"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
           </tr>
         </tbody>
       </table>

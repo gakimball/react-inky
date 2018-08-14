@@ -2,23 +2,28 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import getAttrs from '../util/getAttrs';
+import ContainerContext from '../util/containerContext';
 
 const createSpacer = (props, size, state = false) => (
-  <table {...getAttrs(props, 'table', classnames('spacer', state && `${state}-for-large`))}>
-    <tbody>
-      <tr>
-        <td
-          height={`${size}px`}
-          style={{
-            fontSize: `${size}px`,
-            lineHeight: `${size}px`
-          }}
-        >
-          &nbsp;
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <ContainerContext.Consumer>
+    {({strictMode}) => (
+      <table {...getAttrs(props, 'table', classnames('spacer', state && `${state}-for-large`))}>
+        <tbody>
+          <tr>
+            <td
+              height={strictMode ? `${size}px` : size}
+              style={{
+                fontSize: `${size}px`,
+                lineHeight: `${size}px`
+              }}
+            >
+              &nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    )}
+  </ContainerContext.Consumer>
 );
 
 /**

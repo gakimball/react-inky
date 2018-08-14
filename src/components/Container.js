@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
-import GridContext from '../util/gridContext';
+import ContainerContext from '../util/containerContext';
 
 /**
  * Top-level container for an email. Use this as the root of your email template.
@@ -15,7 +15,12 @@ import GridContext from '../util/gridContext';
  * </Container>
  */
 const Container = props => (
-  <GridContext.Provider value={props.columnCount}>
+  <ContainerContext.Provider
+    value={{
+      columnCount: props.columnCount,
+      strictMode: props.strictMode
+    }}
+  >
     <table align="center" {...getAttrs(props, 'table', 'container')}>
       <tbody>
         <tr>
@@ -23,18 +28,20 @@ const Container = props => (
         </tr>
       </tbody>
     </table>
-  </GridContext.Provider>
+  </ContainerContext.Provider>
 );
 
 /**
  * Prop types for `<Container />`.
  * @type Object
- * @prop [children] Child elements.
- * @prop {Number} [columnCount=12] Global column count.
+ * @prop {*} [children] - Child elements.
+ * @prop {Number} [columnCount=12] - Global column count.
+ * @prop {Boolean} [strictMode] - Match original Inky output exactly.
  */
 Container.propTypes = {
   children: PropTypes.node,
-  columnCount: PropTypes.number
+  columnCount: PropTypes.number,
+  strictMode: PropTypes.bool
 };
 
 /**
@@ -43,7 +50,8 @@ Container.propTypes = {
  */
 Container.defaultProps = {
   children: null,
-  columnCount: 12
+  columnCount: 12,
+  strictMode: true
 };
 
 export default Container;
