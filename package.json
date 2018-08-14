@@ -11,6 +11,7 @@
     "docs:build": "gitbook build",
     "docs:serve": "gitbook serve",
     "test": "xo && mocha --require babel-register \"src/**/__tests__/*.js\"",
+    "prepare": "gitbook install",
     "prepublishOnly": "npm test && npm run build"
   },
   "repository": {

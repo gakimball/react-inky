@@ -1,5 +1,6 @@
 {
   "root": "docs",
   "title": "react-inky",
-  "description": "React components for Inky"
+  "description": "React components for Inky",
+  "plugins": ["-sharing"]
 }
