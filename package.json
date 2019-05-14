@@ -9,6 +9,7 @@
   "scripts": {
     "build": "babel src/ -d lib/ --ignore __tests__",
     "docs:build": "gitbook build",
+    "docs:deploy": "npm run docs:build && gh-pages -d _book",
     "docs:serve": "gitbook serve",
     "test": "xo && mocha --require babel-register \"src/**/__tests__/*.js\"",
     "prepare": "gitbook install",
@@ -46,6 +47,7 @@
     "enzyme-adapter-react-16": "^1.2.0",
     "eslint-config-xo-react": "^0.17.0",
     "eslint-plugin-react": "^7.10.0",
+    "gh-pages": "^2.0.1",
     "gitbook-cli": "^2.3.2",
     "mocha": "^5.2.0",
     "react": "^16.4.2",
