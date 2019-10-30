@@ -4,7 +4,7 @@ import getAttrs from '../util/getAttrs';
 
 export default function Callout(props) {
   return (
-    <table {...getAttrs(props, 'table', 'callout')}>
+    <table {...getAttrs(props, 'callout')}>
       <tr>
         <th className="callout-inner">{props.children}</th>
         <th className="expander"/>

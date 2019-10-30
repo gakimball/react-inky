@@ -4,7 +4,7 @@ import getAttrs from '../util/getAttrs';
 
 export default function Item(props) {
   return (
-    <th {...getAttrs(props, 'th', 'menu-item')}>
+    <th {...getAttrs(props, 'menu-item')}>
       <a href={props.href} target={props.target}>{props.children}</a>
     </th>
   );

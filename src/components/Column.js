@@ -28,7 +28,7 @@ export default function Column(props) {
   return (
     <ContainerContext.Consumer>
       {({columnCount}) => (
-        <th {...getAttrs(props, 'th', getColumnClasses(props, columnCount))}>
+        <th {...getAttrs(props, getColumnClasses(props, columnCount))}>
           <table>
             <tr>
               <th>{props.children}</th>

@@ -1,4 +1,3 @@
-import {filterPropsFor} from 'react-attrs-filter';
 import classnames from 'classnames';
 
 /**
@@ -18,28 +17,15 @@ import classnames from 'classnames';
  *
  * // Only returns "style" and "className", because the other two are custom props
  * // The class "header" is added to the base "row"
- * const attrs = getAttrs(props, 'table', 'row'); // => { style: ..., className: 'row header' }
+ * const attrs = getAttrs(props, 'row'); // => { style: ..., className: 'row header' }
  * <table {...attrs}></table>
  */
-export default function getAttrs(props, tag, className = '') {
+export default function getAttrs(props, className = '') {
   // Filter out non-HTML attributes
-  const output = filterPropsFor(props, tag);
+  const output = Object.assign({}, props);
 
   // Append class names in props to base classes
   output.className = classnames(className, props.className);
-
-  // `style` isn't included in `filterPropsFor` and must be copied manually
-  if (props.style) {
-    output.style = props.style;
-  }
-
-  // Same with `align` and `valign`, since they are deprecated attributes
-  if (props.align) {
-    output.align = props.align;
-  }
-  if (props.valign) {
-    output.valign = props.valign;
-  }
-
+  
   return output;
 }
