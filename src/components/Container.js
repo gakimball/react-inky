@@ -14,26 +14,21 @@ import ContainerContext from '../util/containerContext';
  *   Lorem ipsum dolor sit amet.
  * </Container>
  */
-const Container = props => {
-  const rest = Object.assign({}, props);
-  delete rest.columnCount;
-  delete rest.strictMode;
-
-  return <ContainerContext.Provider
+const Container = props => (
+  <ContainerContext.Provider
     value={{
       columnCount: props.columnCount,
       strictMode: props.strictMode
     }}
-  >  
-    <table align="center" {...getAttrs(rest, 'container')}>
+  >
+    <table align="center" {...getAttrs(props, ['columnCount', 'strictMode', 'children'], 'container')}>
       <tbody>
         <tr>
           <td>{props.children}</td>
         </tr>
       </tbody>
     </table>
-  </ContainerContext.Provider>
-};
+  </ContainerContext.Provider>);
 
 /**
  * Prop types for `<Container />`.

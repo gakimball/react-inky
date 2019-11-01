@@ -12,7 +12,7 @@ describe('getAttrs()', () => {
       className: 'header',
       align: 'center'
     };
-    output = getAttrs(props, 'table', 'row');
+    output = getAttrs(props, ['large', 'small'], 'row');
   });
 
   it('returns an object', () => {

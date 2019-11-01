@@ -7,7 +7,9 @@ import ContainerContext from '../util/containerContext';
 const createSpacer = (props, size, state = false) => (
   <ContainerContext.Consumer>
     {({strictMode}) => (
-      <table {...getAttrs(props, classnames('spacer', state && `${state}-for-large`))}>
+      <table {...getAttrs(props, ['size', 'sizeSm', 'sizeLg', 'children'],
+        classnames('spacer', state && `${state}-for-large`))}
+      >
         <tbody>
           <tr>
             <td

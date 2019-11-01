@@ -6,7 +6,7 @@ export default function Button(props) {
   const expanded = props.className.match('expand') !== null;
 
   return (
-    <table {...getAttrs(props, 'button')}>
+    <table {...getAttrs(props, ['href', 'target', 'children'], 'button')}>
       <tr>
         <td>
           <table>
