@@ -24,7 +24,7 @@ export default function getAttrs(props, excluded, className = '') {
   // Filter out attributes
   const output = {};
   for (const k in props) {
-    if (excluded.indexOf(k) === -1) {
+    if (!excluded.includes(k)) {
       output[k] = props[k];
     }
   }

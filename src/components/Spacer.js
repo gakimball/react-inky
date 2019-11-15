@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import getAttrs from '../util/getAttrs';
@@ -45,10 +45,10 @@ export default function Spacer(props) {
   }
 
   return (
-    <Fragment>
+    <>
       {props.sizeSm && createSpacer(props, props.sizeSm, 'hide')}
       {props.sizeLg && createSpacer(props, props.sizeLg, 'show')}
-    </Fragment>
+    </>
   );
 }
 

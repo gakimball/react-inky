@@ -11,7 +11,7 @@
     "docs:build": "gitbook build",
     "docs:deploy": "npm run docs:build && gh-pages -d _book",
     "docs:serve": "gitbook serve",
-    "test": "xo && mocha --require babel-register \"src/**/__tests__/*.js\"",
+    "test": "xo && mocha --require @babel/register \"src/**/__tests__/*.js\"",
     "prepare": "gitbook install",
     "prepublishOnly": "npm test && npm run build"
   },
@@ -32,27 +32,29 @@
   "homepage": "https://github.com/gakimball/react-inky#readme",
   "dependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "chai-html": "^1.2.1",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/register": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-eslint": "^10.0.3",
+    "chai": "^4.2.0",
+    "chai-html": "^1.3.0",
     "dirty-chai": "^2.0.1",
-    "enzyme": "^3.4.1",
-    "enzyme-adapter-react-16": "^1.2.0",
-    "eslint-config-xo-react": "^0.17.0",
-    "eslint-plugin-react": "^7.10.0",
-    "gh-pages": "^2.0.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint-config-xo-react": "^0.20.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "gh-pages": "^2.1.1",
     "gitbook-cli": "^2.3.2",
-    "mocha": "^5.2.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "xo": "^0.22.0"
+    "mocha": "^6.2.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "xo": "^0.25.3"
   },
   "peerDependencies": {
     "react": "^16.3.0"
@@ -65,9 +67,11 @@
       "mocha"
     ],
     "rules": {
+      "react/boolean-prop-naming": "off",
       "react/forbid-component-props": "off",
       "unicorn/filename-case": "off"
-    }
+    },
+    "parser": "babel-eslint"
   },
   "engines": {
     "node": ">=6"

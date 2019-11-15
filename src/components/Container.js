@@ -28,7 +28,8 @@ const Container = props => (
         </tr>
       </tbody>
     </table>
-  </ContainerContext.Provider>);
+  </ContainerContext.Provider>
+);
 
 /**
  * Prop types for `<Container />`.
