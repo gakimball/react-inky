@@ -8,10 +8,11 @@ export default function Center(props) {
       {/* Add centering attributes and classes to children */}
       {Children.map(props.children, child => {
         if (isValidElement(child)) {
-          return cloneElement(child, Object.assign({}, child.props, {
+          return cloneElement(child, {
+            ...child.props,
             align: 'center',
             className: classnames(child.props.className, 'float-center')
-          }));
+          });
         }
 
         return child;
