@@ -69,7 +69,8 @@
     "rules": {
       "react/boolean-prop-naming": "off",
       "react/forbid-component-props": "off",
-      "unicorn/filename-case": "off"
+      "unicorn/filename-case": "off",
+      "no-new-object": "off"
     },
     "parser": "babel-eslint"
   },
