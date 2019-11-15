@@ -32,11 +32,11 @@
   "homepage": "https://github.com/gakimball/react-inky#readme",
   "dependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.6.2",
-    "react-attrs-filter": "^0.1.2"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.26.0",

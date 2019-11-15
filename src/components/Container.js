@@ -21,15 +21,14 @@ const Container = props => (
       strictMode: props.strictMode
     }}
   >
-    <table align="center" {...getAttrs(props, 'table', 'container')}>
+    <table align="center" {...getAttrs(props, ['columnCount', 'strictMode', 'children'], 'container')}>
       <tbody>
         <tr>
           <td>{props.children}</td>
         </tr>
       </tbody>
     </table>
-  </ContainerContext.Provider>
-);
+  </ContainerContext.Provider>);
 
 /**
  * Prop types for `<Container />`.

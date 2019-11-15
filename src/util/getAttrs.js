@@ -1,10 +1,9 @@
-import {filterPropsFor} from 'react-attrs-filter';
 import classnames from 'classnames';
 
 /**
  * Compile attributes for a component's root element, based on its tag and default class name.
  * @param {Object} props - Component props.
- * @param {String} tag - Component root element.
+ * @param {Array} excluded - List of excluded attributes.
  * @param {String} className - Component root class name.
  * @returns {Object} Filtered props.
  *
@@ -18,28 +17,20 @@ import classnames from 'classnames';
  *
  * // Only returns "style" and "className", because the other two are custom props
  * // The class "header" is added to the base "row"
- * const attrs = getAttrs(props, 'table', 'row'); // => { style: ..., className: 'row header' }
+ * const attrs = getAttrs(props, ['children'], 'row'); // => { style: ..., className: 'row header' }
  * <table {...attrs}></table>
  */
-export default function getAttrs(props, tag, className = '') {
-  // Filter out non-HTML attributes
-  const output = filterPropsFor(props, tag);
+export default function getAttrs(props, excluded, className = '') {
+  // Filter out attributes
+  const output = {};
+  for (const k in props) {
+    if (excluded.indexOf(k) === -1) {
+      output[k] = props[k];
+    }
+  }
 
   // Append class names in props to base classes
   output.className = classnames(className, props.className);
-
-  // `style` isn't included in `filterPropsFor` and must be copied manually
-  if (props.style) {
-    output.style = props.style;
-  }
-
-  // Same with `align` and `valign`, since they are deprecated attributes
-  if (props.align) {
-    output.align = props.align;
-  }
-  if (props.valign) {
-    output.valign = props.valign;
-  }
 
   return output;
 }

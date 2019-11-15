@@ -4,7 +4,7 @@ import getAttrs from '../util/getAttrs';
 
 export default function Wrapper(props) {
   return (
-    <table align="center" {...getAttrs(props, 'table', 'wrapper')}>
+    <table align="center" {...getAttrs(props, ['children'], 'wrapper')}>
       <tr>
         <td className="wrapper-inner">{props.children}</td>
       </tr>
