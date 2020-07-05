@@ -13,7 +13,7 @@ npm install react-inky --save
 
 ## Documentation
 
-[Read the documentation](https://react-inky.now.sh)
+[Read the documentation](https://gakimball.github.io/react-inky/)
 
 ## Local Development
 
