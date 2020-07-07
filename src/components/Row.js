@@ -1,7 +1,6 @@
 import React, {Children, cloneElement} from 'react';
 import PropTypes from 'prop-types';
 import getAttrs from '../util/getAttrs';
-import Column from './Column';
 
 /**
  * Grid row. Use this to define a grid containing a set of columns.
@@ -20,7 +19,7 @@ export default function Row(props) {
       <tbody>
         {/* `first` and `last` props are added to the first and last child in the row, respectively */}
         <tr>{Children.map(props.children, (child, index) => {
-          if (child.type === Column) {
+          if ('props' in new Object(child) && 'first' in child.props && 'last' in child.props) {
             return cloneElement(child, {
               first: index === 0,
               last: index === Children.count(props.children) - 1
