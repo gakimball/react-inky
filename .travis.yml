@@ -1,5 +1,13 @@
 language: node_js
 node_js:
-  - "8"
-  - "10"
-  - "12"
+- '12'
+- '14'
+deploy:
+  provider: npm
+  email: alexey@deli.su
+  api_key:
+    secure: oYfjrDC30Fb43+jO378hfyLOoPeWGnbPhD6uGXyMIP2hGCnbIoNsphtiVuvHKhGoSMwiJgLyMHt+LzbFiV1leodQj89slPuweAgzJJNxZT/5yl+9kJ0MdUcRXtd/4cv8W0wQQgsCkDPG9O1wYsPfi2fDWvLohbXwYtoa9TKEULqUGPxCGoo1ToF4ItGW/2X36O5vcXkqulyFWIn2DLPLdSCozVwN1VmP2qDP5kqPRpeHA78qecpnuw9vDYrlyb1DKB3wl3ALTEhu1V0c9a7i7EIOMIrK814c3zMLNADGfHjEYq5ug/5zfNK+JiXhNYn0YgVFHYMgmNpRr2GYlUKLahT5+PUwD2c/dUjo3vY1y1mqaXoD8p10NulR6qMBFbakn6seduqj7GtBltJqj37hj8+pK0BgWgY+KsLYgSVZv/ZrRIJq07DfqAk/UbowRY6t0VBI0ZKIvXvQ6FxT93Yqvav+NJr1b9HfbxRBmtBPWgkVu9TilJkdtjueLijva/MpGSsOstAXUaIUGazVeVS6t4usRFaKBUzVdWiiOaFmn34hKa0kS3MLOz6zqYWAIc4X6GWczbtkCmf7tN3RilstgnYjj9V9KcY7nBty+wdfouWuKrxsUVBmabf2KOkDO2P8X6P0XiPbEAM7QlbBUt4v/8ypiGmKvdp9AYonuXuEit8=
+  on:
+    tags: true
+    repo: makarenya/react-inky
+  skip_cleanup: 'true'
